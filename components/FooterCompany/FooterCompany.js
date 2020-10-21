@@ -158,7 +158,7 @@ class FooterCompany extends React.Component {
         return (
             <StyledFooter>
                 <Hidden mdDown>
-                    <Grid container spacing={8}>
+                    <Grid container style={{padding: 30}}>
                         <Grid item xs={12} md={4}>
                             <Grid
                                 container
@@ -215,7 +215,7 @@ class FooterCompany extends React.Component {
                 </Hidden>
 
                 <Hidden lgUp>
-                    <Grid container spacing={8}>
+                    <Grid container style={{padding: 15}}>
                         <Grid xs={12} md={7}>
                             <StyledHelpText>{'Suspendisse potenti. Nulla accumsan ornare rhoncus. Nulla ligula libero, dictum ac pulvinar.'}</StyledHelpText>
                         </Grid>

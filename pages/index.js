@@ -9,6 +9,9 @@ import moment from 'moment';
 
 const StyledHeroImageMan = styled.img`
 width:95%;
+@media (max-width: 700px) {
+    width: 100%;
+}
 `
 
 const StyledCard = styled.div`
@@ -38,57 +41,9 @@ const StyledHero1 = styled.div`
 }
   `
 
-const StyledHero1Container = styled.div`
-  display: flex;
-  flex-direction: row`
-
-const StyledHero1Image = styled.img`
- height: 100%;
- width: 95%;
- `
-
-const StyledHero1WaveLower = styled.img`
-position: absolute;
-bottom: 5em;
-right: 40px;
- height: 5em;
- `
-
-const StyledHero1WaveUpper = styled.img`
-position: absolute;
-top: 5em;
-left: 17em;
- height: 5em;
- `
-
-const StyledHero1Column = styled.div`
- display: flex;
-  flex-direction: column`
-
-const StyledHero1Bar = styled.div`
-opacity: 0.5;
-margin-left: 30px;
-border-left: 1px solid rgba(21, 37, 59, 0.5);
-height: 75%;`
-
-const StyledHero1Text = styled.h5`
-display: inline-block;
-margin: 0;
-font-family: 'Poppins', sans-serif;
-font-style: normal;
-font-weight: 500;
-font-size: .8em;
-letter-spacing: 0.02em;
-text-transform: lowercase;
-margin-top: 40px;
-color: #15253B;
-
-transform: rotate(-90deg);
- `
-
 const StyledHero2 = styled.div`
   position: relative;
-  padding: 100px 100px 50px 100px;
+  padding: 10px 0px 0px 10px;
   background: #15253B;
    @media (min-width: 1300px) {
      padding: 100px 0px 0px 0px;
@@ -160,8 +115,7 @@ const StyledHero3 = styled.div`
  background: #ECC2AC;
  margin-top:-7px;
  @media (max-width: 700px) {
-   margin-bottom:11em;
-    padding: 50px 0;
+    padding: 50px 0 80px 0;
    }
    `
 
@@ -176,7 +130,29 @@ const StyledHero3ImageContainer = styled.div`
  background: #FFFFFF;
  @media (max-width: 700px) {
     margin: 0;
+    height: 82px;
+    width: 82px;
 }
+ `
+
+const ImageContainer3 = styled.div`
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin: -30px 0 0 0;
+ background: #FFFFFF;
+ @media (max-width: 700px) {
+    margin: 0;
+    height: 164px;
+  width: 164px;
+}
+ `
+
+const Image3 = styled.img`
+ height: 100px;
  `
 
 const StyledHero3Wave = styled.img`
@@ -194,6 +170,9 @@ const StyledHero5Wave = styled.img`
 
 const StyledHero3Image = styled.img`
  height: 120px;
+ @media (max-width: 700px) {
+    height: 50px;
+}
  `
 
 const StyledHero3Title = styled.h2`
@@ -342,7 +321,8 @@ text-transform: uppercase;
 
 @media (max-width: 700px) {
     font-size: 2.25em;
-    width:80%;
+    text-align: center;
+    padding-top:1em;
 }
  `
 
@@ -358,9 +338,11 @@ color: #15253B;
 max-width: 900px;
 
 @media (max-width: 700px) {
-    width:75%;
-    line-height: 30px;
+    font-weight: 400;
+    font-size: 1.25em;
+    line-height: 25px;
     margin-bottom:25px;
+    text-align: center;
     }
  `
 
@@ -377,8 +359,15 @@ color: #fff;
 max-width: 900px;
 
 @media (max-width: 700px) {
-    width:75%;
-    line-height: 30px;
+    font-family: Poppins;
+    width:70%;
+    text-align: left;
+    font-weight: 400;
+    margin-top:80px;
+    padding-left:55px;
+    font-size: 1.25em;
+    line-height: 25px;
+    letter-spacing: 0.02em;
     }
  `
 
@@ -792,7 +781,8 @@ const StyledBox = styled.div`
   align-items: center;
   
   @media (max-width: 700px) {
-    height:38em;
+    height:4.5em;
+    width:4.5em;
 }
   `
 
@@ -824,8 +814,10 @@ const StyledBlueBoxText = styled.h2`
   color: rgba(255, 255, 255);
   text-transform: uppercase;
   @media (max-width: 700px) {
-    font-size: 1.125em;
-    padding-bottom:2em;
+    font-size: 0.75em;
+    line-height:18px;
+    width:80%;
+    margin-left:4px;
 }
 `;
 
@@ -840,8 +832,7 @@ position:relative;
   margin:0;
   text-transform: uppercase;
   @media (max-width: 700px) {
-    font-size: 1.125em;
-    padding-bottom:2em;
+    font-size: 0.75em;
 }
 `;
 
@@ -857,7 +848,7 @@ position:relative;
   color: black;
   text-transform: uppercase;
   @media (max-width: 700px) {
-    font-size: 2.9em;
+    font-size: 1.5em;
 }
 `;
 
@@ -889,11 +880,11 @@ font-style: normal;
 font-weight: 700;
 font-size: 12em;
 margin: 0;
-color: #fff;
+color: #15253B;
 @media (max-width: 700px) {
-    font-size: 4em;
+    font-size: 4.5em;
     text-align: right;
-    top: -32px;
+    top: -38px;
 }
  `
 
@@ -910,7 +901,7 @@ font-size: 12em;
 margin: 0;
 color: #fff;
 @media (max-width: 700px) {
-  font-size: 4em;
+  font-size: 4.5em;
   top: -35px;
 }
  `
@@ -1046,50 +1037,50 @@ export default class Launch extends Component {
 
             <StyledHero2>
               <Grid container>
-              <Grid item xs={6}>
-              <StyledHeroTitleWhite style={{ marginTop: -200, position: 'relative', zIndex: 10 }}>
-                {'WHAT?'}
-              </StyledHeroTitleWhite>
+                <Grid item xs={6}>
+                  <StyledHeroTitleWhite style={{ marginTop: -200, position: 'relative', zIndex: 10 }}>
+                    {'WHAT?'}
+                  </StyledHeroTitleWhite>
 
-              <div style={{paddingLeft: 50}}>
-                <div>
-                  <Grid item container justify="center" alignItems="flex-start" style={{ position: 'relative' }}>
-                    <StyledHeroDescriptionWhite>{'consectetur adipiscing elit. Suspendisse id metus sed metus molestie molestie non at metus. Fusce vitae varius lectus, ut congue mi. '}</StyledHeroDescriptionWhite>
-                  </Grid>
-                  <Grid
-                      item
-                      container
-                      justify='center'
-                      alignItems='center'
-                      style={{ paddingTop: "3em" }}>
+                  <div style={{ paddingLeft: 50 }}>
+                    <div>
+                      <Grid item container justify="center" alignItems="flex-start" style={{ position: 'relative' }}>
+                        <StyledHeroDescriptionWhite>{'consectetur adipiscing elit. Suspendisse id metus sed metus molestie molestie non at metus. Fusce vitae varius lectus, ut congue mi. '}</StyledHeroDescriptionWhite>
+                      </Grid>
+                      <Grid
+                          item
+                          container
+                          justify='center'
+                          alignItems='center'
+                          style={{ paddingTop: "3em" }}>
 
-                    <Grid item direction="column" md={4} xs={12}>
-                      <StyledHeroImageContainer2>
-                        <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
-                      </StyledHeroImageContainer2>
-                      <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
-                    </Grid>
+                        <Grid item direction="column" md={4} xs={12}>
+                          <StyledHeroImageContainer2>
+                            <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
+                          </StyledHeroImageContainer2>
+                          <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
+                        </Grid>
 
-                    <Grid item direction="column" md={4} xs={12}>
-                      <StyledHeroImageContainer2>
-                        <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
-                      </StyledHeroImageContainer2>
-                      <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
-                    </Grid>
+                        <Grid item direction="column" md={4} xs={12}>
+                          <StyledHeroImageContainer2>
+                            <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
+                          </StyledHeroImageContainer2>
+                          <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
+                        </Grid>
 
-                    <Grid item direction="column" md={4} xs={12}>
-                      <StyledHeroImageContainer2>
-                        <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
-                      </StyledHeroImageContainer2>
-                      <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
-                    </Grid>
-                  </Grid>
-                </div>
-              </div>
-              </Grid>
-              <Grid item xs={6} style={{ display: 'inline', textAlign: 'right', marginTop: -300 }}>
-                <StyledHeroImageMan src={'/assets/landing/bald-man.png'} />
-              </Grid>
+                        <Grid item direction="column" md={4} xs={12}>
+                          <StyledHeroImageContainer2>
+                            <StyledHeroImage2 src={"/assets/landing/info1@3x.png"} />
+                          </StyledHeroImageContainer2>
+                          <StyledBlueBoxText>ICON TEXT</StyledBlueBoxText>
+                        </Grid>
+                      </Grid>
+                    </div>
+                  </div>
+                </Grid>
+                <Grid item xs={6} style={{ display: 'inline', textAlign: 'right', marginTop: -300 }}>
+                  <StyledHeroImageMan src={'/assets/landing/bald-man.png'} />
+                </Grid>
               </Grid>
             </StyledHero2>
 
@@ -1169,17 +1160,42 @@ export default class Launch extends Component {
 
             <StyledHero1>
 
-              <StyledBoxTime>15</StyledBoxTime>
-              <StyledBoxText>days</StyledBoxText>
+              <Grid item container justify="center" direction='row' style={{ position: 'relative' }}>
 
-              <StyledBoxTime>06</StyledBoxTime>
-              <StyledBoxText>hours</StyledBoxText>
+                <StyledBox style={{ background: 'rgba(255, 255, 255,0.8)' }}>
+                  <Grid container direction='column' alignItems='center' justify='center'>
+                    <Grid item>
+                      <StyledBoxTime>{days}</StyledBoxTime>
+                    </Grid>
+                    <Grid item>
+                      <StyledBoxText>days</StyledBoxText>
+                    </Grid>
+                  </Grid>
+                </StyledBox>
+                <StyledBox style={{ background: 'rgba(255, 255, 255, 0.6)' }}>
+                  <Grid container direction='column' justify='center' alignContent='center'>
+                    <StyledBoxTime>{hours}</StyledBoxTime>
+                    <StyledBoxText>hours</StyledBoxText>
+                  </Grid>
+                </StyledBox>
+                <StyledBox style={{ background: 'rgba(255, 255, 255, 0.4)' }}>
+                  <Grid container direction='column' justify='center'>
+                    <StyledBoxTime>{minutes}</StyledBoxTime>
+                    <StyledBoxText>minutes</StyledBoxText>
+                  </Grid>
+                </StyledBox>
+                <StyledBox style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
+                  <Grid container direction='column' alignContent='center' justify='center'>
+                    <Grid item>
+                      <StyledBoxTime>{seconds}</StyledBoxTime>
+                    </Grid>
+                    <Grid item>
+                      <StyledBoxText>seconds</StyledBoxText>
+                    </Grid>
+                  </Grid>
+                </StyledBox>
 
-              <StyledBoxTime>06</StyledBoxTime>
-              <StyledBoxText>minutes</StyledBoxText>
-
-              <StyledBoxTime>06</StyledBoxTime>
-              <StyledBoxText>seconds</StyledBoxText>
+              </Grid>
 
               <StyledHero5Text>{'LAUNCHING SOON!'}</StyledHero5Text>
 
@@ -1226,71 +1242,35 @@ export default class Launch extends Component {
 
               <StyledHero2TitleRES>{'WHAT?'}</StyledHero2TitleRES>
 
-              <Grid container>
+              <StyledHeroDescriptionWhite>{'consectetur adipiscing elit. Suspendisse id metus sed metus molestie molestie non at metus. Fusce vitae varius lectus, ut congue mi.'}</StyledHeroDescriptionWhite>
 
-                <Grid >
-                  <Grid style={{ marginTop: '3em', paddingBottom: 75 }}
-                        container
-                        direction='column'
-                        justify="center"
-                        alignItems="center">
-                    <Grid item >
+              <Grid container justify='space-evenly' direction='row' style={{ width: '80%', marginTop: '3em', paddingBottom: 7, marginRight: 'auto', marginLeft: 'auto' }}>
 
-                    </Grid>
-                    <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info1@3x.png'} />
-                      </StyledHero3ImageContainer>
-                    </Grid>
-                    <Grid item container justify='center' direction='column'>
-                      <StyledHero2StepTitle>Step 1</StyledHero2StepTitle>
-                      <StyledHero2StepText> Answer a few basic questions and get in touch with one of our doctors for consultation</StyledHero2StepText>
-                    </Grid>
-                  </Grid>
-
-                  <Grid style={{ paddingBottom: 75 }}
-                        container
-                        direction="column"
-                        justify="center"
-                        alignItems="center">
-                    <Grid item >
-
-                    </Grid>
-
-                    <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info2@3x.png'} />
-                      </StyledHero3ImageContainer>
-                    </Grid>
-
-                    <Grid item container justify='center' direction='column'>
-                      <StyledHero2StepTitle >Step 2</StyledHero2StepTitle>
-                      <StyledHero2StepText> {'Get FDA approved medicines tailored to your condition at the convenience of your home'}</StyledHero2StepText>
-                    </Grid>
-
-                  </Grid>
-
-                  <Grid style={{ paddingBottom: 0 }}
-                        container
-                        direction="column"
-                        justify="center"
-                        alignItems="center">
-                    <Grid item >
-
-                    </Grid>
-                    <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info3@3x.png'} />
-                      </StyledHero3ImageContainer>
-                    </Grid>
-                    <Grid item container justify='center' direction='column'>
-                      <StyledHero2StepTitle >Step 3</StyledHero2StepTitle>
-                      <StyledHero2StepText> {'Track your progress and receive continuous support along the way'}</StyledHero2StepText>
-                    </Grid>
-
-                  </Grid>
+                <Grid item alignItems='center'>
+                  <StyledHero3ImageContainer>
+                    <StyledHero3Image src={'/assets/landing/info1@3x.png'} />
+                  </StyledHero3ImageContainer>
+                  <StyledBlueBoxText>NO HIDDEN TAXES</StyledBlueBoxText>
                 </Grid>
 
+                <Grid item >
+                  <StyledHero3ImageContainer>
+                    <StyledHero3Image src={'/assets/landing/info2@3x.png'} />
+                  </StyledHero3ImageContainer>
+                  <StyledBlueBoxText>NO HIDDEN TAXES</StyledBlueBoxText>
+                </Grid>
+
+                <Grid item >
+                  <StyledHero3ImageContainer>
+                    <StyledHero3Image src={'/assets/landing/info3@3x.png'} />
+                  </StyledHero3ImageContainer>
+                  <StyledBlueBoxText>NO HIDDEN TAXES</StyledBlueBoxText>
+                </Grid>
+
+              </Grid>
+
+              <Grid item style={{ display: 'inline', marginTop: -300, marginRight: -200 }}>
+                <StyledHeroImageMan src={'/assets/landing/bald-man.png'} />
               </Grid>
 
             </StyledHero2>
@@ -1311,9 +1291,9 @@ export default class Launch extends Component {
 
                     </Grid>
                     <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info1@3x.png'} />
-                      </StyledHero3ImageContainer>
+                      <ImageContainer3>
+                        <Image3 src={'/assets/landing/info1@3x.png'} />
+                      </ImageContainer3>
                     </Grid>
                     <Grid item container justify='center' direction='column'>
                       <StyledHero3StepTitle>Step 1</StyledHero3StepTitle>
@@ -1331,9 +1311,9 @@ export default class Launch extends Component {
                     </Grid>
 
                     <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info2@3x.png'} />
-                      </StyledHero3ImageContainer>
+                      <ImageContainer3>
+                        <Image3 src={'/assets/landing/info2@3x.png'} />
+                      </ImageContainer3>
                     </Grid>
 
                     <Grid item container justify='center' direction='column'>
@@ -1352,9 +1332,9 @@ export default class Launch extends Component {
 
                     </Grid>
                     <Grid item >
-                      <StyledHero3ImageContainer>
-                        <StyledHero3Image src={'/assets/landing/info3@3x.png'} />
-                      </StyledHero3ImageContainer>
+                      <ImageContainer3>
+                        <Image3 src={'/assets/landing/info3@3x.png'} />
+                      </ImageContainer3>
                     </Grid>
                     <Grid item container justify='center' direction='column'>
                       <StyledHero3StepTitle >Step 3</StyledHero3StepTitle>
