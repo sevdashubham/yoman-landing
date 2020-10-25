@@ -547,7 +547,7 @@ export default class Launch extends Component {
                     </div>
                   </div>
                 </Grid>
-                <Grid item xs={6} style={{ display: 'inline', textAlign: 'right', marginTop: -300 }}>
+                <Grid item xs={6} style={{ display: 'inline', textAlign: 'right', marginTop: -200 }}>
                   <StyledHeroImageMan src={'/assets/landing/bald-man.png'} />
                 </Grid>
               </Grid>
@@ -713,7 +713,7 @@ export default class Launch extends Component {
 
               <StyledHeroDescriptionWhite style={{marginTop: "7em"}}>{'Yo Man! is a direct to consumer tele health platform catering to all male related health and wellness issues, starting with hair loss.'}</StyledHeroDescriptionWhite>
 
-              <Grid container justify='space-evenly' direction='row' style={{ width: '80%', paddingTop: '4em', paddingBottom: 7, marginRight: 'auto', marginLeft: 'auto' }}>
+              <Grid container justify='space-evenly' direction='row' style={{ width: '100%', paddingTop: '4em', paddingBottom: 7, marginRight: 'auto', marginLeft: 'auto' }}>
 
                 <Grid item alignItems='center'>
                   <StyledHero3ImageContainer>
