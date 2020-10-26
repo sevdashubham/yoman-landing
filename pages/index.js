@@ -6,6 +6,7 @@ import Hidden from "@material-ui/core/Hidden";
 import YMInput from '../components/YMInput';
 import YMButton from '../components/YMButton';
 import moment from 'moment';
+import firebaseDb from '../firebase/firebase'
 
 const StyledHeroImageMan = styled.img`
 width:95%;
@@ -373,7 +374,14 @@ export default class Launch extends Component {
     days: undefined,
     hours: undefined,
     minutes: undefined,
-    seconds: undefined
+    seconds: undefined,
+    userName: '',
+    age: '',
+    hairLossTime: '',
+    phoneNo: '',
+    email: '',
+    address: '',
+    isSuccessful: false
   }
 
   componentDidMount() {
@@ -397,8 +405,42 @@ export default class Launch extends Component {
     }
   }
 
+  handleChange = (inputVal, stateKey) => {
+    // console.log(inputVal);
+    this.setState({ [stateKey]: inputVal })
+  }
+
+
+  handleSubmit = () => {
+    const {isSuccessful} = this.state;
+    if (!isSuccessful) {
+      let userObj = {
+        userName: this.state.userName,
+        age: this.state.age,
+        hairLossTime: this.state.hairLossTime,
+        phoneNo: this.state.phoneNo,
+        email: this.state.email,
+        address: this.state.address
+      }
+
+      console.log(userObj);
+
+      firebaseDb.database().ref().child('Registered-Users').push(
+          userObj,
+          err => {
+            if (err) {
+              console.log(err)
+            } else {
+              console.log('pushed successfully');
+              this.setState({isSuccessful: true})
+            }
+            // console.log(userObj);
+          })
+    }
+  }
+
   render() {
-    const { days, hours, minutes, seconds } = this.state;
+    const { days, hours, minutes, seconds, isSuccessful } = this.state;
     return (
         <div>
 
@@ -467,33 +509,33 @@ export default class Launch extends Component {
                     <Grid container direction='column' justify='flex-start' style={{ paddingTop: '2em' }}>
 
                       <Grid item style={{ paddingBottom: '1em' }}>
-                        <YMInput widthStr={"26.375em"} title={"Your Name"} />
+                        <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Your Name"} stateKey={'userName'} handleChangeProp={this.handleChange} />
                       </Grid>
 
                       <Grid item container direction='row' style={{ paddingBottom: '1em' }}>
                         <Grid item style={{ marginRight: '0.5em' }}>
-                          <YMInput widthStr={"7.5625em"} title={"Age"} />
+                          <YMInput formName={'user registration'} widthStr={"7.5625em"} title={"Age"} stateKey={'age'} handleChangeProp={this.handleChange} />
                         </Grid>
                         <Grid item >
-                          <YMInput widthStr={"16.625em"} title={"How long have you had hair loss"} />
+                          <YMInput formName={'user registration'} widthStr={"16.625em"} title={"How long have you had hair loss"} stateKey={'hairLossTime'} handleChangeProp={this.handleChange} />
                         </Grid>
 
                       </Grid>
 
                       <Grid item style={{ paddingBottom: '1em' }}>
-                        <YMInput widthStr={"26.375em"} title={"Phone"} />
+                        <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Phone"} stateKey={'phoneNo'} handleChangeProp={this.handleChange} />
                       </Grid>
 
                       <Grid item container style={{ paddingBottom: '1em' }}>
-                        <YMInput widthStr={"26.375em"} title={"Email Address"} />
+                        <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Email Address"} stateKey={'email'} handleChangeProp={this.handleChange} />
                       </Grid>
 
                       <Grid item style={{ paddingBottom: '1.875em' }}>
-                        <YMInput widthStr={"26.375em"} title={"Address"} />
+                        <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Address"} stateKey={'address'} handleChangeProp={this.handleChange} />
                       </Grid>
 
                       <Grid item >
-                        <YMButton title={"SUBMIT"} />
+                        <YMButton title={isSuccessful? 'SUBMITTED': "SUBMIT"} onClick={this.handleSubmit} />
                       </Grid>
 
                     </Grid>
@@ -674,31 +716,31 @@ export default class Launch extends Component {
                 <Grid container direction='column' justify='flex-start' style={{ paddingTop: '2em' }}>
 
                   <Grid item container style={{ paddingBottom: '1em' }}>
-                    <YMInput widthStr={"26.375em"} title={"Your Name"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Your Name"} stateKey={'userName'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ paddingBottom: '1em' }}>
-                    <YMInput widthStr={"26.375em"} title={"Age"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Age"} stateKey={'age'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ paddingBottom: '1em' }}>
-                    <YMInput widthStr={"26.375em"} title={"How long have you had hair loss"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"How long have you had hair loss"} stateKey={'hairLossTime'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ paddingBottom: '1em' }}>
-                    <YMInput widthStr={"26.375em"} title={"Phone"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Phone"} stateKey={'phoneNo'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ paddingBottom: '1em' }}>
-                    <YMInput widthStr={"26.375em"} title={"Email Address"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Email Address"} stateKey={'email'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ paddingBottom: '1.875em' }}>
-                    <YMInput widthStr={"26.375em"} title={"Address"} />
+                    <YMInput formName={'user registration'} widthStr={"26.375em"} title={"Address"} stateKey={'address'} handleChangeProp={this.handleChange} />
                   </Grid>
 
                   <Grid item container style={{ marginBottom: '1.875em' }} >
-                    <YMButton title={"SUBMIT"} />
+                    <YMButton title={isSuccessful? 'SUBMITTED': "SUBMIT"} onClick={this.handleSubmit} />
                   </Grid>
 
                 </Grid>

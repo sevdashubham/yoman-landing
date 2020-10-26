@@ -12,13 +12,21 @@ const InputStyle = styled.input`
         color: rgba(21, 37, 59, 0.5);
         width:${props => props.widthStr};
 `
+
 class YMInput extends Component {
+
+    handleChange = (e) => {
+        if (this.props.formName == 'user registration') {
+            this.props.handleChangeProp(e.target.value, this.props.stateKey)
+        }
+    }
 
     render() {
         const { widthStr, title } = this.props;
 
         return (
-            <InputStyle {...{ widthStr, title }} type='text' placeholder={title} />
+            <InputStyle {...{ widthStr, title }} type='text' placeholder={title}
+                        onChange={this.handleChange} />
         )
     }
 }
