@@ -6,7 +6,8 @@ import Hidden from "@material-ui/core/Hidden";
 import YMInput from '../components/YMInput';
 import YMButton from '../components/YMButton';
 import moment from 'moment';
-import firebaseDb from '../firebase/firebase'
+import firebaseDb from '../firebase/firebase';
+import ReactGA from 'react-ga';
 
 const StyledHeroImageMan = styled.img`
 width:95%;
@@ -385,6 +386,9 @@ export default class Launch extends Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('UA-179589906-1');
+    console.log(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname + window.location.search);
     this.interval = setInterval(() => {
       const { timeTillDate, timeFormat } = this.state;
       const then = moment(timeTillDate, timeFormat);
@@ -414,6 +418,10 @@ export default class Launch extends Component {
   handleSubmit = () => {
     const {isSuccessful} = this.state;
     if (!isSuccessful) {
+      ReactGA.event({
+        category: 'User',
+        action: 'Registered for waiting list'
+      });
       let userObj = {
         userName: this.state.userName,
         age: this.state.age,
